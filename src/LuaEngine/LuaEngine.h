@@ -546,6 +546,11 @@ public:
     void OnSpellPrepare(Unit* caster, Spell* spell, SpellInfo const* spellInfo);
     void OnSpellCast(Unit* caster, Spell* spell, SpellInfo const* spellInfo, bool skipCheck);
     void OnSpellCastCancel(Unit* caster, Spell* spell, SpellInfo const* spellInfo, bool bySelf);
+
+    /* NCLite Customs */
+    void OnBattleRankChanged(Player* pPlayer, uint8 oldRank);
+    bool OnBuyItem(Player* pPlayer, uint32 item);
+    bool OnSellItem(Player* pPlayer, uint32 item);
 };
 template<> Unit* Eluna::CHECKOBJ<Unit>(lua_State* L, int narg, bool error);
 template<> Object* Eluna::CHECKOBJ<Object>(lua_State* L, int narg, bool error);

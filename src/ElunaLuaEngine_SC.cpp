@@ -940,6 +940,11 @@ public:
     {
         return sEluna->CanPlayerResurrect(player);
     }
+
+    void OnBattleRankChanged(Player* player, uint8 oldRank) override
+    {
+        sEluna->OnBattleRankChanged(player, oldRank);
+    }
 };
 
 class Eluna_ServerScript : public ServerScript

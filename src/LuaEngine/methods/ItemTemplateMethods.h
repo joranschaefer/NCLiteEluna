@@ -212,6 +212,20 @@ namespace LuaItemTemplate
         Eluna::Push(L, icon);
         return 1;
     }
+
+
+    // NCLite Customs
+    
+    /**
+     * Returns the minimum Battle Rank required to use this [ItemTemplate].
+     *
+     * @return uint32 requiredBattleRank
+     */
+    int GetRequiredBattleRank(lua_State* L, ItemTemplate* itemTemplate)
+    {
+        Eluna::Push(L, itemTemplate->RequiredBattleRank);
+        return 1;
+    }
 }
 
 #endif

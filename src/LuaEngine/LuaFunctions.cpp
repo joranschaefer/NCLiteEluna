@@ -753,6 +753,16 @@ ElunaRegister<Player> PlayerMethods[] =
     { "UpdatePlayerSetting", &LuaPlayer::UpdatePlayerSetting },
     { "TeleportTo", &LuaPlayer::TeleportTo },
 
+    // Battle Rank
+	{ "GetBattleRank", &LuaPlayer::GetBattleRank },
+	{ "SetBattleRank", &LuaPlayer::SetBattleRank },
+	{ "GetProgressPoints", &LuaPlayer::GetProgressPoints },
+	{ "GetProgressCap", &LuaPlayer::GetProgressCap },
+	{ "GiveProgressPoints", &LuaPlayer::GiveProgressPoints },
+	{ "GetPremiumDays", &LuaPlayer::GetPremiumDays },
+	{ "SetPremiumDays", &LuaPlayer::SetPremiumDays },
+	{ "IsPremium", &LuaPlayer::IsPremium },
+
     { NULL, NULL }
 };
 
@@ -976,6 +986,9 @@ ElunaRegister<ItemTemplate> ItemTemplateMethods[] =
     { "GetItemLevel", &LuaItemTemplate::GetItemLevel },
     { "GetRequiredLevel", &LuaItemTemplate::GetRequiredLevel },
     { "GetIcon", &LuaItemTemplate::GetIcon },
+
+    // Battle Rank
+    { "GetRequiredBattleRank", &LuaItemTemplate::GetRequiredBattleRank },
     { NULL, NULL }
 };
 

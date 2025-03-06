@@ -227,6 +227,10 @@ namespace Hooks
         PLAYER_EVENT_ON_BEFORE_UPDATE_SKILL     =     61,       // (event, player, skill_id, value, max, step) -- Can return new amount
         PLAYER_EVENT_ON_UPDATE_SKILL            =     62,       // (event, player, skill_id, value, max, step, new_value)
 
+        PLAYER_EVENT_ON_BATTLERANK_CHANGED      =     69,       // (event, player, oldRank)
+        PLAYER_EVENT_ON_BUYITEM                 =     70,       // (event, player, item) - Return false to stop buying, return true to allow
+        PLAYER_EVENT_ON_SELLITEM                =     71,       // (event, player, item) - Return false to stop selling, return true to allow
+
         PLAYER_EVENT_COUNT
     };
 
