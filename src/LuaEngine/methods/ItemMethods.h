@@ -724,5 +724,18 @@ namespace LuaItem
         item->SaveToDB(trans);
         return 0;
     }
+
+    /* NCLite Customs*/
+
+    /**
+     * Returns the minimum Battle Rank required to use this [Item]
+     *
+     * @return uint32 requiredBattleRank
+     */
+    int GetRequiredBattleRank(lua_State* L, Item* item)
+    {
+        Eluna::Push(L, item->GetTemplate()->RequiredBattleRank);
+        return 1;
+    }
 };
 #endif
