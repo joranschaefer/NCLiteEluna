@@ -623,7 +623,8 @@ public:
         PLAYERHOOK_ON_CAN_UPDATE_SKILL,
         PLAYERHOOK_ON_BEFORE_UPDATE_SKILL,
         PLAYERHOOK_ON_UPDATE_SKILL,
-        PLAYERHOOK_CAN_RESURRECT
+        PLAYERHOOK_CAN_RESURRECT,
+        PLAYERHOOK_ON_BATLLERANK_CHANGED
     }) { }
 
     void OnPlayerResurrect(Player* player, float /*restore_percent*/, bool /*applySickness*/) override

@@ -961,6 +961,9 @@ ElunaRegister<Item> ItemMethods[] =
     { "SetEnchantment", &LuaItem::SetEnchantment },
     { "ClearEnchantment", &LuaItem::ClearEnchantment },
 
+    // Battle Rank
+    { "GetRequiredBattleRank", &LuaItem::GetRequiredBattleRank },
+
     // Other
     { "SaveToDB", &LuaItem::SaveToDB },
 
@@ -989,6 +992,7 @@ ElunaRegister<ItemTemplate> ItemTemplateMethods[] =
 
     // Battle Rank
     { "GetRequiredBattleRank", &LuaItemTemplate::GetRequiredBattleRank },
+
     { NULL, NULL }
 };
 
