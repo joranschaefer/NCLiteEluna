@@ -345,6 +345,8 @@ namespace Hooks
         ITEM_EVENT_ON_QUEST_ACCEPT                      = 3,    // (event, player, item, quest) - Can return true
         ITEM_EVENT_ON_EXPIRE                            = 4,    // (event, player, itemid) - Can return true
         ITEM_EVENT_ON_REMOVE                            = 5,    // (event, player, item) - Can return true
+        ITEM_EVENT_ON_BUY                               = 6,    // (event, player, itemid) - Can return true
+        ITEM_EVENT_ON_SELL                              = 7,    // (event, player, itemid) - Can return true
         ITEM_EVENT_COUNT
     };
 

@@ -770,19 +770,3 @@ void Eluna::OnBattleRankChanged(Player* pPlayer, uint8 oldRank)
     Push(oldRank);
     CallAllFunctions(PlayerEventBindings, key);
 }
-
-bool Eluna::OnBuyItem(Player* pPlayer, uint32 item)
-{
-    START_HOOK_WITH_RETVAL(PLAYER_EVENT_ON_BUYITEM, false);
-    Push(pPlayer);
-    Push(item);
-    return CallAllFunctionsBool(PlayerEventBindings, key);
-}
-
-bool Eluna::OnSellItem(Player* pPlayer, uint32 item)
-{
-    START_HOOK_WITH_RETVAL(PLAYER_EVENT_ON_SELLITEM, false);
-    Push(pPlayer);
-    Push(item);
-    return CallAllFunctionsBool(PlayerEventBindings, key);
-}

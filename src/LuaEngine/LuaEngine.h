@@ -352,7 +352,11 @@ public:
     bool OnItemGossip(Player* pPlayer, Item* pItem, SpellCastTargets const& targets);
     bool OnExpire(Player* pPlayer, ItemTemplate const* pProto);
     bool OnRemove(Player* pPlayer, Item* item);
+    bool OnBuy(Player* pPlayer, uint32 item);
+    bool OnSell(Player* pPlayer, uint32 item);
+
     void HandleGossipSelectOption(Player* pPlayer, Item* item, uint32 sender, uint32 action, const std::string& code);
+
 
     /* Creature */
     void OnDummyEffect(WorldObject* pCaster, uint32 spellId, SpellEffIndex effIndex, Creature* pTarget);
@@ -549,8 +553,6 @@ public:
 
     /* NCLite Customs */
     void OnBattleRankChanged(Player* pPlayer, uint8 oldRank);
-    bool OnBuyItem(Player* pPlayer, uint32 item);
-    bool OnSellItem(Player* pPlayer, uint32 item);
 };
 template<> Unit* Eluna::CHECKOBJ<Unit>(lua_State* L, int narg, bool error);
 template<> Object* Eluna::CHECKOBJ<Object>(lua_State* L, int narg, bool error);
