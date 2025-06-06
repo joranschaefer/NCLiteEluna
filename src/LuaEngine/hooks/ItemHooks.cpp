@@ -115,3 +115,19 @@ bool Eluna::OnRemove(Player* pPlayer, Item* pItem)
     Push(pItem);
     return CallAllFunctionsBool(ItemEventBindings, key);
 }
+
+bool Eluna::OnBuy(Player* pPlayer, uint32 item)
+{
+    START_HOOK_WITH_RETVAL(ITEM_EVENT_ON_BUY, item, false);
+    Push(pPlayer);
+    Push(item);
+    return CallAllFunctionsBool(ItemEventBindings, key);
+}
+
+bool Eluna::OnSell(Player* pPlayer, uint32 item)
+{
+    START_HOOK_WITH_RETVAL(ITEM_EVENT_ON_SELL, item, false);
+    Push(pPlayer);
+    Push(item);
+    return CallAllFunctionsBool(ItemEventBindings, key);
+}

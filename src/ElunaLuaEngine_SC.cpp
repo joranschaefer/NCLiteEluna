@@ -230,6 +230,18 @@ public:
     {
         sEluna->HandleGossipSelectOption(player, item, sender, action, code);
     }
+
+    bool OnItemBuy(Player* player, uint32 item) override
+    {
+        sEluna->OnBuy(player, item);
+        return true;
+    }
+
+    bool OnItemSell(Player* player, uint32 item) override
+    {
+        sEluna->OnSell(player, item);
+        return true;
+    }
 };
 
 class Eluna_AllMapScript : public AllMapScript
@@ -586,6 +598,8 @@ public:
         PLAYERHOOK_ON_CREATURE_KILL,
         PLAYERHOOK_ON_PLAYER_KILLED_BY_CREATURE,
         PLAYERHOOK_ON_LEVEL_CHANGED,
+        PLAYERHOOK_ON_BATTLERANK_CHANGED,
+        PLAYERHOOK_ON_PRESTIGE_CHANGED,
         PLAYERHOOK_ON_FREE_TALENT_POINTS_CHANGED,
         PLAYERHOOK_ON_TALENTS_RESET,
         PLAYERHOOK_ON_MONEY_CHANGED,
@@ -624,7 +638,6 @@ public:
         PLAYERHOOK_ON_BEFORE_UPDATE_SKILL,
         PLAYERHOOK_ON_UPDATE_SKILL,
         PLAYERHOOK_CAN_RESURRECT,
-        PLAYERHOOK_ON_BATLLERANK_CHANGED
     }) { }
 
     void OnPlayerResurrect(Player* player, float /*restore_percent*/, bool /*applySickness*/) override
@@ -942,9 +955,14 @@ public:
         return sEluna->CanPlayerResurrect(player);
     }
 
-    void OnBattleRankChanged(Player* player, uint8 oldRank) override
+    void OnPlayerBattleRankChanged(Player* player, uint8 oldRank) override
     {
         sEluna->OnBattleRankChanged(player, oldRank);
+    }
+
+    void OnPlayerPrestigeChanged(Player* player, uint8 prestige) override
+    {
+        sEluna->OnPrestigeChanged(player, prestige);
     }
 };
 

@@ -230,6 +230,7 @@ namespace Hooks
         PLAYER_EVENT_ON_BATTLERANK_CHANGED      =     69,       // (event, player, oldRank)
         PLAYER_EVENT_ON_BUYITEM                 =     70,       // (event, player, item) - Return false to stop buying, return true to allow
         PLAYER_EVENT_ON_SELLITEM                =     71,       // (event, player, item) - Return false to stop selling, return true to allow
+        PLAYER_EVENT_ON_PRESTIGE_CHANGED        =     72,       // (event, player, prestige)
 
         PLAYER_EVENT_COUNT
     };
@@ -345,6 +346,8 @@ namespace Hooks
         ITEM_EVENT_ON_QUEST_ACCEPT                      = 3,    // (event, player, item, quest) - Can return true
         ITEM_EVENT_ON_EXPIRE                            = 4,    // (event, player, itemid) - Can return true
         ITEM_EVENT_ON_REMOVE                            = 5,    // (event, player, item) - Can return true
+        ITEM_EVENT_ON_BUY                               = 6,    // (event, player, itemid) - Can return true
+        ITEM_EVENT_ON_SELL                              = 7,    // (event, player, itemid) - Can return true
         ITEM_EVENT_COUNT
     };
 

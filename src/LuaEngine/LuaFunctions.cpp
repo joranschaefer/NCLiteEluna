@@ -753,15 +753,20 @@ ElunaRegister<Player> PlayerMethods[] =
     { "UpdatePlayerSetting", &LuaPlayer::UpdatePlayerSetting },
     { "TeleportTo", &LuaPlayer::TeleportTo },
 
-    // Battle Rank
+    // NC Customs
 	{ "GetBattleRank", &LuaPlayer::GetBattleRank },
 	{ "SetBattleRank", &LuaPlayer::SetBattleRank },
+    { "GetPrestige", &LuaPlayer::GetPrestige },
+    { "SetPrestige", &LuaPlayer::SetPrestige },
+    { "SetPrestigePlayerFrame", &LuaPlayer::SetPrestigePlayerFrame },
 	{ "GetProgressPoints", &LuaPlayer::GetProgressPoints },
 	{ "GetProgressCap", &LuaPlayer::GetProgressCap },
 	{ "GiveProgressPoints", &LuaPlayer::GiveProgressPoints },
 	{ "GetPremiumDays", &LuaPlayer::GetPremiumDays },
 	{ "SetPremiumDays", &LuaPlayer::SetPremiumDays },
 	{ "IsPremium", &LuaPlayer::IsPremium },
+    { "SendCombatLogPPGain", &LuaPlayer::SendCombatLogPPGain },
+
 
     { NULL, NULL }
 };

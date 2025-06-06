@@ -4057,6 +4057,34 @@ namespace LuaPlayer
 		return 0;
 	}
 
+    int GetPrestige(lua_State* L, Player* player)
+    {
+        Eluna::Push(L, player->GetPrestige());
+        return 1;
+    }
+
+    int SetPrestige(lua_State* L, Player* player)
+    {
+        uint8 prestige = Eluna::CHECKVAL<uint8>(L, 2);
+
+        if (prestige < 0)
+            return 0;
+
+        if (prestige > 7)
+            return 0;
+
+        player->SetPrestige(prestige);
+        return 0;
+    }
+
+    int SetPrestigePlayerFrame(lua_State* L, Player* player)
+    {
+        uint32 entry = Eluna::CHECKVAL<uint32>(L, 2);
+
+        player->SetPrestigePlayerFrame(entry);
+        return 0;
+    }
+
     int GetProgressPoints(lua_State* L, Player* player)
 	{
 		Eluna::Push(L, player->GetProgressPoints());
@@ -4101,6 +4129,14 @@ namespace LuaPlayer
 		Eluna::Push(L, player->IsPremium());
 		return 1;
 	}
+
+    int SendCombatLogPPGain(lua_State* L, Player* player)
+    {
+        uint32 value = Eluna::CHECKVAL<uint32>(L, 2);
+        player->SendLogXPGain(value, nullptr, 0, false, 1.0f);
+        return 0;
+    }
+
 };
 #endif
 
