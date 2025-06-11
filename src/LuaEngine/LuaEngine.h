@@ -554,6 +554,8 @@ public:
     /* NCLite Customs */
     void OnBattleRankChanged(Player* pPlayer, uint8 oldRank);
     void OnPrestigeChanged(Player* pPlayer, uint8 prestige);
+    void OnBGObjectiveCaptured(BattleGround* bg, BattleGroundTypeId bgId, uint32 instanceId, Player* player, uint32 eventType);
+    void OnArenaEnd(Player* player, uint32 Own_MMRating, uint32 Opponent_MMRating, bool Won);
 };
 template<> Unit* Eluna::CHECKOBJ<Unit>(lua_State* L, int narg, bool error);
 template<> Object* Eluna::CHECKOBJ<Object>(lua_State* L, int narg, bool error);

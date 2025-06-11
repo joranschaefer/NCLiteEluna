@@ -56,3 +56,26 @@ void Eluna::OnBGDestroy(BattleGround* bg, BattleGroundTypeId bgId, uint32 instan
     Push(instanceId);
     CallAllFunctions(BGEventBindings, key);
 }
+
+void Eluna::OnBGObjectiveCaptured(BattleGround* bg, BattleGroundTypeId bgId, uint32 instanceId, Player* player, uint32 eventType)
+{
+    START_HOOK(BG_EVENT_ON_OBJECTIVE_CAPTURED);
+    Push(bg);
+    Push(bgId);
+    Push(instanceId);
+    Push(player);
+    Push(eventType);
+    CallAllFunctions(BGEventBindings, key);
+    printf("OnBGObjectiveCaptured called for bgId: %u, instanceId: %u, player: %s, eventType: %u\n",
+        static_cast<unsigned int>(bgId), instanceId, player ? player->GetName().c_str() : "NULL", eventType);
+}
+
+void Eluna::OnArenaEnd(Player* player, uint32 Own_MMRating, uint32 Opponent_MMRating, bool Won)
+{
+    START_HOOK(BG_EVENT_ON_ARENA_END);
+    Push(player);
+    Push(Own_MMRating);
+    Push(Opponent_MMRating);
+    Push(Won);
+    CallAllFunctions(BGEventBindings, key);
+}

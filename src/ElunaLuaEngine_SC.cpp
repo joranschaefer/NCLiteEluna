@@ -354,6 +354,16 @@ public:
     {
         sEluna->OnBGCreate(bg, bg->GetBgTypeID(), bg->GetInstanceID());
     }
+
+    void OnBattlegroundObjectiveCaptured(Battleground* bg, Player* player, uint32 eventType) override
+    {
+        sEluna->OnBGObjectiveCaptured(bg, bg->GetBgTypeID(), bg->GetInstanceID(), player, eventType);
+    }
+
+    void OnArenaGameEnd(Player* player, uint32 Own_MMRating, uint32 Opponent_MMRating, bool Won) override
+    {
+        sEluna->OnArenaEnd(player, Own_MMRating, Opponent_MMRating, Won);
+    }
 };
 
 class Eluna_CommandSC : public CommandSC

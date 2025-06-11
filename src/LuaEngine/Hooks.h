@@ -364,6 +364,8 @@ namespace Hooks
         BG_EVENT_ON_END                                 = 2,    // (event, bg, bgId, instanceId, winner) - Needs to be added to TC
         BG_EVENT_ON_CREATE                              = 3,    // (event, bg, bgId, instanceId) - Needs to be added to TC
         BG_EVENT_ON_PRE_DESTROY                         = 4,    // (event, bg, bgId, instanceId) - Needs to be added to TC
+        BG_EVENT_ON_OBJECTIVE_CAPTURED                  = 5,	// (event, bg, bgId, instanceId, player, eventType) NetherCrusade
+        BG_EVENT_ON_ARENA_END                           = 6,    // (event, Own_MMRating, Opponent_MMRating, Won)
         BG_EVENT_COUNT
     };
 
